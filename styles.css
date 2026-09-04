@@ -27,6 +27,52 @@ html, body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+body::before {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 90, 31, 0.26), transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(47, 141, 245, 0.28), transparent 48%),
+    radial-gradient(circle at 30% 85%, rgba(47, 141, 245, 0.22), transparent 44%),
+    radial-gradient(circle at 80% 80%, rgba(255, 90, 31, 0.2), transparent 44%);
+  background-size: 180% 180%;
+  animation: bg-drift 24s ease-in-out infinite alternate;
+}
+
+body::after {
+  background-image:
+    linear-gradient(var(--blue) 1px, transparent 1px),
+    linear-gradient(90deg, var(--blue) 1px, transparent 1px);
+  background-size: 46px 46px;
+  opacity: 0.07;
+  animation: bg-pan 40s linear infinite;
+}
+
+@keyframes bg-drift {
+  0%   { background-position: 0% 0%, 100% 0%, 0% 100%, 100% 100%; }
+  50%  { background-position: 15% 15%, 85% 20%, 20% 80%, 80% 85%; }
+  100% { background-position: 5% 25%, 95% 5%, 10% 90%, 90% 75%; }
+}
+
+@keyframes bg-pan {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 46px 46px, 46px 46px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    animation: none;
+  }
+}
+
 a { color: inherit; text-decoration: none; }
 
 .layout {
@@ -203,9 +249,44 @@ a { color: inherit; text-decoration: none; }
   color: var(--blue);
 }
 
+.hero-image-figure {
+  margin: 28px 0 0;
+}
+
 .hero-image {
-  min-height: 210px;
-  margin-top: 28px;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: calc(var(--radius) - 3px);
+  border: 4px solid transparent;
+  background: linear-gradient(var(--bg-card), var(--bg-card)) padding-box,
+              linear-gradient(135deg, var(--orange) 0%, var(--blue) 100%) border-box;
+}
+
+.hero-image-caption {
+  margin: 8px 0 0;
+  color: var(--text-muted);
+  font-size: 12px;
+  text-align: center;
+}
+
+.mission-card {
+  border-top: 3px solid var(--orange);
+  border-bottom: 3px solid var(--blue);
+}
+
+.mission-quote {
+  margin: 12px 0 0;
+  padding: 16px 20px;
+  border-left: 3px solid var(--orange);
+  background: rgba(255, 90, 31, 0.08);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--text-primary);
+  font-size: 15px;
+  font-style: italic;
+  line-height: 1.6;
+  max-width: 680px;
 }
 
 .card-image {
