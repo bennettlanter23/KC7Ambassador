@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Interviews | KC7 Student Ambassador</title>
 <link rel="stylesheet" href="styles.css">
+<script>
+  try {
+    if (localStorage.getItem('kc7-theme') === 'light') {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  } catch (e) {}
+</script>
 </head>
 <body>
 <div class="layout">
@@ -43,8 +50,16 @@
   <div class="main">
     <div class="topbar">
       <div class="topbar-title">Interviews</div>
-      <img src="IMG_5802.PNG" alt="KC7 Ambassadors logo" class="topbar-logo">
-      <div class="topbar-badge">Ambassador Portal</div>
+      <div class="topbar-logo-wrap">
+        <img src="IMG_5802.PNG" alt="KC7 Ambassadors logo" class="topbar-logo">
+      </div>
+      <div class="topbar-right">
+        <button class="theme-toggle" type="button" aria-label="Toggle light and dark mode" title="Toggle light/dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <div class="topbar-badge">Ambassador Portal</div>
+      </div>
     </div>
 
     <div class="content">
@@ -60,7 +75,7 @@
       </div>
 
       <div class="note-banner">
-        <strong>Template note:</strong> the first card below is a filled-in example. Duplicate a card's HTML in <code>interviews.html</code> to add a real member, and replace the bracketed placeholders in the rest with real names, schools, and quotes.
+        <strong>Template note:</strong> Simeon Kakpovi and Jibby Saetang are real KC7 members — fill in their pull quotes and answers below. Duplicate a card's HTML in <code>interviews.html</code> to add more members, and replace the bracketed placeholders with real names, schools, and quotes.
       </div>
 
       <div class="section">
@@ -69,34 +84,15 @@
         <div class="grid grid-3">
 
           <div class="card profile-card">
-            <span class="pill orange">Example — replace me</span>
-            <div class="image-placeholder profile-image" role="img" aria-label="Image placeholder for Jordan Diaz"></div>
+            <div class="video-placeholder" role="img" aria-label="Placeholder for a YouTube interview link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg>
+              <span>YouTube link coming soon</span>
+            </div>
             <div class="profile-head">
-              <div class="avatar">JD</div>
+              <img class="avatar" src="simeon.jpeg" alt="Simeon Kakpovi">
               <div>
-                <div class="profile-name">Jordan Diaz</div>
-                <div class="profile-school">Lincoln High School · Member since Spring 2025</div>
-              </div>
-            </div>
-            <blockquote>"I started with a five-person Daily7 watch party in the library. By the end of the semester our cyber club had grown to 30 students, and two of them are now KC7 members too."</blockquote>
-            <div class="qa">
-              <strong>Why did you join KC7?</strong>
-              I wanted more people at my school to know cybersecurity is a real career path, not just a hobby.
-            </div>
-            <div class="qa">
-              <strong>Favorite event you've run?</strong>
-              A blue-team night where teams raced to solve a Daily7 puzzle live on the projector.
-            </div>
-          </div>
-
-          <div class="card profile-card">
-            <span class="pill">Add member</span>
-            <div class="image-placeholder profile-image" role="img" aria-label="Image placeholder for a KC7 member"></div>
-            <div class="profile-head">
-              <div class="avatar">?</div>
-              <div>
-                <div class="profile-name">[Student Name]</div>
-                <div class="profile-school">[School] · Member since [term]</div>
+                <div class="profile-name">Simeon Kakpovi</div>
+                <div class="profile-school">President</div>
               </div>
             </div>
             <blockquote>"[Pull quote from the interview goes here.]"</blockquote>
@@ -111,13 +107,61 @@
           </div>
 
           <div class="card profile-card">
-            <span class="pill">Add member</span>
-            <div class="image-placeholder profile-image" role="img" aria-label="Image placeholder for a KC7 member"></div>
+            <div class="video-placeholder" role="img" aria-label="Placeholder for a YouTube interview link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg>
+              <span>YouTube link coming soon</span>
+            </div>
             <div class="profile-head">
-              <div class="avatar">?</div>
+              <img class="avatar" src="greg-schloemer.webp" alt="Greg Schloemer">
               <div>
-                <div class="profile-name">[Student Name]</div>
-                <div class="profile-school">[School] · Member since [term]</div>
+                <div class="profile-name">Greg Schloemer</div>
+                <div class="profile-school">Vice President</div>
+              </div>
+            </div>
+            <blockquote>"[Pull quote from the interview goes here.]"</blockquote>
+            <div class="qa">
+              <strong>Why did you join KC7?</strong>
+              [Answer]
+            </div>
+            <div class="qa">
+              <strong>Favorite event you've run?</strong>
+              [Answer]
+            </div>
+          </div>
+
+          <div class="card profile-card">
+            <div class="video-placeholder" role="img" aria-label="Placeholder for a YouTube interview link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg>
+              <span>YouTube link coming soon</span>
+            </div>
+            <div class="profile-head">
+              <img class="avatar" src="tawon-saeteng.jpeg" alt="Jibby Saetang">
+              <div>
+                <div class="profile-name">Jibby Saetang</div>
+                <div class="profile-school">Board Treasurer</div>
+              </div>
+            </div>
+            <blockquote>"[Pull quote from the interview goes here.]"</blockquote>
+            <div class="qa">
+              <strong>Why did you join KC7?</strong>
+              [Answer]
+            </div>
+            <div class="qa">
+              <strong>Favorite event you've run?</strong>
+              [Answer]
+            </div>
+          </div>
+
+          <div class="card profile-card">
+            <div class="video-placeholder" role="img" aria-label="Placeholder for a YouTube interview link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></svg>
+              <span>YouTube link coming soon</span>
+            </div>
+            <div class="profile-head">
+              <img class="avatar" src="Blain.webp" alt="Blain Hailemariam">
+              <div>
+                <div class="profile-name">Blain Hailemariam</div>
+                <div class="profile-school">Threat Intel Content Lead</div>
               </div>
             </div>
             <blockquote>"[Pull quote from the interview goes here.]"</blockquote>
@@ -151,7 +195,17 @@
       </div>
 
     </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <img src="IMG_5801.PNG" alt="KC7 Ambassadors logo" class="footer-logo">
+        <p class="footer-tagline">Built and maintained by KC7 Student Ambassadors — this is a student-made resource, not an official KC7 Foundation site.</p>
+        <a class="footer-link" href="https://kc7cyber.com" target="_blank" rel="noopener">Visit the official KC7 platform ↗</a>
+        <p class="footer-copy">© 2026 KC7 Student Ambassador Program</p>
+      </div>
+    </footer>
   </div>
 </div>
+<script src="theme.js" defer></script>
 </body>
 </html>
