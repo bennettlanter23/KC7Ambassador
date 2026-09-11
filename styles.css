@@ -20,6 +20,7 @@
   --sidebar-text-strong: #f4f6fb;
   --sidebar-hover-bg: rgba(255, 255, 255, 0.08);
   --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-card: #073a66;
 }
 
 :root[data-theme="light"] {
@@ -226,6 +227,59 @@ a { color: inherit; text-decoration: none; }
   color: var(--sidebar-text-strong);
   margin-left: -3px;
   padding-left: 13px;
+}
+
+.nav-item-wrap {
+  position: relative;
+}
+
+.nav-item-wrap .nav-chevron {
+  width: 14px;
+  height: 14px;
+  margin-left: auto;
+  opacity: 0.6;
+  flex-shrink: 0;
+  transition: transform 0.15s ease;
+}
+
+.nav-item-wrap:hover .nav-chevron {
+  transform: rotate(90deg);
+}
+
+.nav-submenu {
+  display: none;
+  margin: 2px 0 4px 32px;
+  padding-left: 12px;
+  border-left: 1px solid var(--sidebar-border);
+}
+
+.nav-item-wrap:hover .nav-submenu,
+.nav-item-wrap:focus-within .nav-submenu {
+  display: block;
+}
+
+.nav-submenu a {
+  display: block;
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--sidebar-text);
+}
+
+.nav-submenu a:hover {
+  background: var(--sidebar-hover-bg);
+  color: var(--sidebar-text-strong);
+}
+
+.nav-submenu .nav-submenu-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--sidebar-text);
+  opacity: 0.6;
+  padding: 6px 10px 2px;
 }
 
 /* ---------- Topbar ---------- */
@@ -710,6 +764,26 @@ ul.check-list li strong { color: var(--text-primary); }
   flex-shrink: 0;
 }
 
+/* Swap a .video-placeholder for this once a real YouTube link is ready — see the
+   HTML comment above each profile card's video-placeholder for the exact markup. */
+.video-embed {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 2px;
+  background: var(--bg-card-hover);
+}
+
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .avatar {
   width: 46px;
   height: 46px;
@@ -854,5 +928,19 @@ img.avatar {
   .topbar-title,
   .topbar-right {
     justify-self: center;
+  }
+
+  .nav-submenu {
+    display: block;
+    position: static;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    margin: 0 0 4px 20px;
+    padding: 0;
+  }
+
+  .nav-item-wrap .nav-chevron {
+    display: none;
   }
 }
